@@ -1,5 +1,5 @@
 shinyUI(pageWithSidebar(  
-  headerPanel("Average CO2 emissions by make and year"),  
+  headerPanel("CO2 Emissions of cars"),  
   sidebarPanel(
     checkboxGroupInput('classes', label=h3("Vehicle Classes"), 
                        choices = list("Two-Seaters" = "Two-Seaters", 
@@ -14,6 +14,8 @@ shinyUI(pageWithSidebar(
     actionButton('removeMake', 'Remove checked')
   ), 
   mainPanel(    
+    htmlOutput("instructions"),
+    htmlOutput("plotHeading"),
     plotOutput('co2emissions')
   )
 ))

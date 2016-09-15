@@ -56,5 +56,8 @@ shinyServer(
         checkboxGroupInput("checkedMakes", h3("Selected makes"), choices=makeInputs)
       })
     })
+    output$instructions <- renderText("<h3>Instructions</h3><p>This app plots the average CO2 emission for the selected vehicles classes and makes. Makes are shown in different colours and the values are averaged yearly.</p><p>You can select interesting vehicle classes from the checkboxes. You can add makes to the comparision with 'Add to plot' and remove them with by checking them and then clicking 'Remove checked'.</p><p>Source data is from here: http://www.fueleconomy.gov/feg/ws/index.shtml</p>")
+    output$plotHeading <- renderText("<h3>CO2 Emission plot</h3>")
   }
+  
 )
